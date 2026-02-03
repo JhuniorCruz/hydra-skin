@@ -1,4 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animations */
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-in-left {
+  0% { opacity: 0; transform: translateX(-24px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes zoom-soft {
+  0% { opacity: 0; transform: scale(0.96); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.anim {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.anim.is-visible[data-anim="fade-up"] { animation: fade-up 0.7s ease forwards; }
+.anim.is-visible[data-anim="slide-left"] { animation: slide-in-left 0.7s ease forwards; }
+.anim.is-visible[data-anim="zoom"] { animation: zoom-soft 0.7s ease forwards; }
 
 html {
   scroll-behavior: smooth;

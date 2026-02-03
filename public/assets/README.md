@@ -1,0 +1,1 @@
+Coloca aquí los assets estáticos de Hydra Skin.\n\n- logo-hydra.png (requerido para la barra de navegación)\n- Puedes agregar antes/después en esta carpeta y referenciarlos desde src/data/gallery.js si prefieres rutas locales.\n- Mantén nombres en minúsculas y sin espacios.\n
