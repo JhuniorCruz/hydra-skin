@@ -11,6 +11,7 @@ module.exports = {
           bg: "#F0EFED",
           beige: "#E0D4BE",
           pink: "#FF9DDA",
+          pinkStrong: "#C4478E",
           dark: "#252525",
         },
       },

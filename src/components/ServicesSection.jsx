@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const ServicesSection = ({ services }) => {
+export const ServicesSection = ({ services, onReserveService }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const handleSelect = (index) => {
@@ -16,7 +16,7 @@ export const ServicesSection = ({ services }) => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] mb-3 block text-hydra-dark">Menu de Servicios</span>
+          <span className="text-sm font-bold uppercase tracking-wide mb-3 block text-hydra-dark">Menu de Servicios</span>
           <h2 className="text-4xl font-serif text-hydra-dark">Rituales de Belleza</h2>
         </div>
 
@@ -37,12 +37,12 @@ export const ServicesSection = ({ services }) => {
                     handleSelect(idx);
                   }
                 }}
-                className={`relative p-8 shadow-lg cursor-pointer group transition-colors transition-shadow duration-300 bg-hydra-bg hover:bg-hydra-dark hover:shadow-2xl ${
-                  isActive ? "bg-hydra-dark shadow-2xl" : ""
+                className={`relative p-8 rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.12)] cursor-pointer group transition-colors transition-shadow duration-300 bg-hydra-bg hover:bg-hydra-dark hover:shadow-[0_20px_45px_rgba(0,0,0,0.18)] ${
+                  isActive ? "bg-hydra-dark shadow-[0_20px_45px_rgba(0,0,0,0.18)]" : ""
                 }`}
               >
                 <div
-                  className={`absolute top-0 right-0 bg-hydra-pink text-hydra-dark text-[10px] font-bold uppercase px-3 py-1 tracking-widest transition-opacity duration-200 ${
+                  className={`absolute top-0 right-0 bg-hydra-pink text-hydra-dark text-sm font-bold uppercase px-3 py-1 tracking-wide transition-opacity duration-200 ${
                     isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
                   }`}
                 >
@@ -59,7 +59,7 @@ export const ServicesSection = ({ services }) => {
                       {svc.name}
                     </h3>
                     <p
-                      className={`text-xs mt-1 uppercase tracking-wide transition-colors ${
+                      className={`text-sm mt-1 uppercase tracking-wide transition-colors ${
                         isActive ? "text-white/50" : "text-gray-500 group-hover:text-white/50"
                       }`}
                     >
@@ -70,7 +70,7 @@ export const ServicesSection = ({ services }) => {
                 </div>
 
                 <div
-                  className={`mb-6 overflow-hidden rounded-md border ${
+                  className={`mb-6 overflow-hidden rounded-xl border ${
                     isActive
                       ? "border-white/20 bg-white/10"
                       : "border-gray-200 bg-white group-hover:border-white/20 group-hover:bg-white/10"
@@ -85,7 +85,7 @@ export const ServicesSection = ({ services }) => {
                     />
                   ) : (
                     <div
-                      className={`h-56 md:h-64 w-full grid place-items-center text-[11px] uppercase tracking-[0.2em] ${
+                      className={`h-56 md:h-64 w-full grid place-items-center text-sm uppercase tracking-wide ${
                         isActive ? "text-white/50" : "text-gray-500 group-hover:text-white/50"
                       }`}
                     >
@@ -100,13 +100,18 @@ export const ServicesSection = ({ services }) => {
 
                 <button
                   type="button"
-                  className={`w-full py-3 text-xs uppercase tracking-widest font-bold transition-colors ${
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveIndex(idx);
+                    onReserveService?.(svc.name);
+                  }}
+                  className={`w-full py-3 text-sm uppercase tracking-wide font-bold transition-colors ${
                     isActive
                       ? "bg-hydra-pink text-hydra-dark hover:brightness-110"
                       : "border border-hydra-dark text-hydra-dark group-hover:border-hydra-pink group-hover:bg-hydra-pink group-hover:text-hydra-dark"
                   }`}
                 >
-                  {isActive ? "Reservar" : "Detalles"}
+                  Reservar
                 </button>
               </article>
             );

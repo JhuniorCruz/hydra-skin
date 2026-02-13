@@ -5,7 +5,7 @@ export const GallerySection = ({ items }) => (
   <section id="galeria" className="py-24 bg-hydra-bg">
     <div className="container mx-auto px-6">
       <div className="flex flex-col items-center mb-12 text-center" data-aos="fade-up">
-        <span className="text-xs font-bold uppercase tracking-[0.25em] mb-3 text-hydra-pink">Transformaciones reales</span>
+        <span className="text-sm font-bold uppercase tracking-wide mb-3 text-hydra-pinkStrong">Transformaciones reales</span>
         <h2 className="text-3xl font-serif mb-2 text-hydra-dark">Estética Visual</h2>
         <div className="w-12 h-1 bg-hydra-pink mb-4" />
         <p className="text-sm text-gray-600 max-w-xl mb-4">
@@ -15,7 +15,7 @@ export const GallerySection = ({ items }) => (
           href="https://www.instagram.com/hydra.skin.aesthetic/"
           target="_blank"
           rel="noreferrer"
-          className="text-xs font-bold uppercase tracking-widest hover:text-hydra-pink transition-colors flex items-center gap-2"
+          className="text-sm font-bold uppercase tracking-wide hover:text-hydra-pinkStrong transition-colors flex items-center gap-2"
         >
           <i className="fa-brands fa-instagram text-lg" /> {instagramHandle}
         </a>
@@ -23,17 +23,22 @@ export const GallerySection = ({ items }) => (
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {items.map((item, idx) => (
-          <div key={item.title} className="bg-white shadow-lg rounded-md overflow-hidden" data-aos="zoom-in" data-aos-delay={idx * 80}>
+          <div
+            key={item.title}
+            className="bg-white rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.12)] overflow-hidden"
+            data-aos="zoom-in"
+            data-aos-delay={idx * 80}
+          >
             <div className="grid grid-cols-2 gap-px bg-hydra-beige/40">
               <div className="relative">
                 <img src={item.before} alt={`Antes - ${item.title}`} className="h-96 md:h-[26rem] w-full object-cover" />
-                <span className="absolute top-2 left-2 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.15em] bg-white/90 text-hydra-dark rounded-full shadow-sm">
+                <span className="absolute top-2 left-2 px-3 py-1 text-sm font-bold uppercase tracking-wide bg-white/90 text-hydra-dark rounded-full shadow-sm">
                   Antes
                 </span>
               </div>
               <div className="relative">
                 <img src={item.after} alt={`Después - ${item.title}`} className="h-96 md:h-[26rem] w-full object-cover" />
-                <span className="absolute top-2 left-2 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.15em] bg-hydra-pink text-hydra-dark rounded-full shadow-sm">
+                <span className="absolute top-2 left-2 px-3 py-1 text-sm font-bold uppercase tracking-wide bg-hydra-pink text-hydra-dark rounded-full shadow-sm">
                   Después
                 </span>
               </div>

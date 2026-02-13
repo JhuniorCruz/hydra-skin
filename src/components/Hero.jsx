@@ -16,15 +16,15 @@ export const Hero = ({ scrollToId }) => (
       <div className="max-w-3xl">
         <div className="inline-flex items-center gap-2 px-4 py-1 mb-6 border border-hydra-pink/70 rounded-full backdrop-blur-md bg-white/10">
           <i className="fa-solid fa-sparkles text-hydra-pink text-xs" />
-          <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white">Bienestar & Estética</span>
+          <span className="text-sm uppercase tracking-wide font-bold text-white">Bienestar & Estetica</span>
         </div>
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-light mb-6 leading-[1.1] text-white">
           Tu piel, tu mejor <br />
-          <span className="italic text-hydra-pink">carta de presentación</span>
+          <span className="italic text-hydra-pink">carta de presentacion</span>
         </h1>
         <p className="text-lg md:text-xl mb-10 font-light max-w-lg leading-relaxed text-white/90">
           Especialistas en tratamientos faciales y bienestar integral. Recupera la luminosidad que te define con
-          nuestros rituales personalizados en Nuevo Chimbote, Perú.
+          nuestros rituales personalizados en Nuevo Chimbote, Peru.
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
           <button

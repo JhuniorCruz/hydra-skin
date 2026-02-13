@@ -26,7 +26,7 @@ export const NavBar = ({ navSolid, scrollToId, onMenuToggle }) => {
             >
               HYDRA SKIN
             </span>
-            <span className="text-[10px] tracking-[0.4em] uppercase mt-1 font-bold text-hydra-pink">
+            <span className="text-sm tracking-wide uppercase mt-1 font-bold text-hydra-pinkStrong">
               Aesthetics
             </span>
           </div>

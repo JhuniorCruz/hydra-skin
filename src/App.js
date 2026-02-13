@@ -12,6 +12,7 @@ import { ServicesSection } from "./components/ServicesSection";
 import { GallerySection } from "./components/GallerySection";
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
+import { FloatingWhatsAppButton } from "./components/FloatingWhatsAppButton";
 
 import { stats as statsData } from "./data/stats";
 import { services } from "./data/services";
@@ -88,6 +89,11 @@ function App() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleServiceReserve = (serviceName) => {
+    setFormData((prev) => ({ ...prev, service: serviceName }));
+    scrollToId("contacto");
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const { name, phone, email, service, date } = formData;
@@ -116,14 +122,16 @@ function App() {
       <Hero scrollToId={scrollToId} />
       <StatsSection counts={counts} statsRef={statsRef} stats={statsData} />
       <AboutSection />
-      <ServicesSection services={services} />
+      <ServicesSection services={services} onReserveService={handleServiceReserve} />
       <GallerySection items={galleryBeforeAfter} />
       <ContactSection
         formData={formData}
         handleFieldChange={handleFieldChange}
         handleSubmit={handleSubmit}
         btnLabel={btnLabel}
+        services={services}
       />
+      <FloatingWhatsAppButton phoneNumber={WHATSAPP_NUMBER} />
       <Footer scrollToId={scrollToId} />
     </div>
   );
