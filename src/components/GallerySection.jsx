@@ -26,13 +26,13 @@ export const GallerySection = ({ items }) => (
           <div key={item.title} className="bg-white shadow-lg rounded-md overflow-hidden" data-aos="zoom-in" data-aos-delay={idx * 80}>
             <div className="grid grid-cols-2 gap-px bg-hydra-beige/40">
               <div className="relative">
-                <img src={item.before} alt={`Antes - ${item.title}`} className="h-80 w-full object-cover" />
+                <img src={item.before} alt={`Antes - ${item.title}`} className="h-96 md:h-[26rem] w-full object-cover" />
                 <span className="absolute top-2 left-2 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.15em] bg-white/90 text-hydra-dark rounded-full shadow-sm">
                   Antes
                 </span>
               </div>
               <div className="relative">
-                <img src={item.after} alt={`Después - ${item.title}`} className="h-80 w-full object-cover" />
+                <img src={item.after} alt={`Después - ${item.title}`} className="h-96 md:h-[26rem] w-full object-cover" />
                 <span className="absolute top-2 left-2 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.15em] bg-hydra-pink text-hydra-dark rounded-full shadow-sm">
                   Después
                 </span>
