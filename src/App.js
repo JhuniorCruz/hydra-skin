@@ -8,8 +8,10 @@ import { MobileMenu } from "./components/MobileMenu";
 import { Hero } from "./components/Hero";
 import { StatsSection } from "./components/StatsSection";
 import { AboutSection } from "./components/AboutSection";
+import { ExpertiseSection } from "./components/ExpertiseSection";
 import { ServicesSection } from "./components/ServicesSection";
 import { GallerySection } from "./components/GallerySection";
+import { FAQSection } from "./components/FAQSection";
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 import { FloatingWhatsAppButton } from "./components/FloatingWhatsAppButton";
@@ -26,7 +28,7 @@ function App() {
   const [counts, setCounts] = useState(statsData.map(() => 0));
   const countersStarted = useRef(false);
   const statsRef = useRef(null);
-  const formButtonText = "Confirmar Cita";
+  const formButtonText = "Enviar por WhatsApp";
   const [btnLabel, setBtnLabel] = useState(formButtonText);
   const [formData, setFormData] = useState({
     name: "",
@@ -98,12 +100,12 @@ function App() {
     e.preventDefault();
     const { name, phone, email, service, date } = formData;
     const message =
-      `Hola Hydra Skin, quiero agendar una cita.\n\n` +
+      `Hola Hydra Skin, quiero agendar una evaluacion.\n\n` +
       `Nombre: ${name || "No especificado"}\n` +
-      `Teléfono: ${phone || "No especificado"}\n` +
+      `Telefono: ${phone || "No especificado"}\n` +
       `Email: ${email || "No especificado"}\n` +
       `Servicio: ${service || "Por definir"}\n` +
-      `Fecha deseada: ${date || "Próxima disponible"}`;
+      `Fecha deseada: ${date || "Proxima disponible"}`;
 
     const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     setBtnLabel("Abriendo WhatsApp...");
@@ -122,8 +124,10 @@ function App() {
       <Hero scrollToId={scrollToId} />
       <StatsSection counts={counts} statsRef={statsRef} stats={statsData} />
       <AboutSection />
+      <ExpertiseSection />
       <ServicesSection services={services} onReserveService={handleServiceReserve} />
       <GallerySection items={galleryBeforeAfter} />
+      <FAQSection />
       <ContactSection
         formData={formData}
         handleFieldChange={handleFieldChange}

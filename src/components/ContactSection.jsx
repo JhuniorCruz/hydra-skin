@@ -6,11 +6,11 @@ export const ContactSection = ({ formData, handleFieldChange, handleSubmit, btnL
       <div className="flex flex-col lg:flex-row gap-16">
         <div className="lg:w-1/3 space-y-10">
           <div>
-            <span className="text-sm font-bold uppercase tracking-wide mb-3 block text-hydra-pinkStrong">Contacto</span>
-            <h2 className="text-4xl font-serif mb-6 text-white">Inicia tu cambio</h2>
+            <span className="text-sm font-bold uppercase tracking-wide mb-3 block text-hydra-pink">Agenda</span>
+            <h2 className="text-4xl font-serif mb-6 text-white">Comienza tu protocolo de cuidado</h2>
             <p className="font-light leading-relaxed text-white/80">
-              Estamos listos para atenderte. Dejanos tus datos y uno de nuestros especialistas confirmara tu sesion a la
-              brevedad.
+              Comparte tus datos y tu objetivo principal. Nuestro equipo confirma tu evaluacion personalizada y te
+              orienta en el mejor tratamiento para tu piel.
             </p>
           </div>
 

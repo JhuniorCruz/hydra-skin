@@ -5,19 +5,19 @@ export const GallerySection = ({ items }) => (
   <section id="galeria" className="py-24 bg-hydra-bg">
     <div className="container mx-auto px-6">
       <div className="flex flex-col items-center mb-12 text-center" data-aos="fade-up">
-        <span className="text-sm font-bold uppercase tracking-wide mb-3 text-hydra-pinkStrong">Transformaciones reales</span>
-        <h2 className="text-3xl font-serif mb-2 text-hydra-dark">Estética Visual</h2>
+        <span className="text-sm font-bold uppercase tracking-wide mb-3 text-hydra-dark/70">Resultados reales</span>
+        <h2 className="text-3xl font-serif mb-2 text-hydra-dark">Casos antes y despues</h2>
         <div className="w-12 h-1 bg-hydra-pink mb-4" />
         <p className="text-sm text-gray-600 max-w-xl mb-4">
-          Antes y después, rituales y resultados que compartimos a diario con nuestra comunidad.
+          Evolucion visible de protocolos faciales y corporales compartidos con nuestra comunidad.
         </p>
         <a
           href="https://www.instagram.com/hydra.skin.aesthetic/"
           target="_blank"
           rel="noreferrer"
-          className="text-sm font-bold uppercase tracking-wide hover:text-hydra-pinkStrong transition-colors flex items-center gap-2"
+          className="text-sm font-bold uppercase tracking-wide hover:text-hydra-dark transition-colors flex items-center gap-2"
         >
-          <i className="fa-brands fa-instagram text-lg" /> {instagramHandle}
+          <i className="fa-brands fa-instagram text-lg text-hydra-pink" /> {instagramHandle}
         </a>
       </div>
 
@@ -37,9 +37,9 @@ export const GallerySection = ({ items }) => (
                 </span>
               </div>
               <div className="relative">
-                <img src={item.after} alt={`Después - ${item.title}`} className="h-96 md:h-[26rem] w-full object-cover" />
+                <img src={item.after} alt={`Despues - ${item.title}`} className="h-96 md:h-[26rem] w-full object-cover" />
                 <span className="absolute top-2 left-2 px-3 py-1 text-sm font-bold uppercase tracking-wide bg-hydra-pink text-hydra-dark rounded-full shadow-sm">
-                  Después
+                  Despues
                 </span>
               </div>
             </div>

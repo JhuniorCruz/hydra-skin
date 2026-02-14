@@ -1,5 +1,13 @@
 import React from "react";
 
+const navLinks = [
+  ["Inicio", "inicio"],
+  ["Metodo", "expertise"],
+  ["Servicios", "servicios"],
+  ["FAQ", "faq"],
+  ["Galeria", "galeria"],
+];
+
 export const NavBar = ({ navSolid, scrollToId, onMenuToggle }) => {
   return (
     <nav
@@ -11,10 +19,7 @@ export const NavBar = ({ navSolid, scrollToId, onMenuToggle }) => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center gap-4">
-        <button
-          onClick={() => scrollToId("inicio")}
-          className="flex items-center gap-3 group shrink-0"
-        >
+        <button onClick={() => scrollToId("inicio")} className="flex items-center gap-3 group shrink-0">
           <div className="relative w-12 h-12 flex items-center justify-center bg-white/90 rounded-full shadow-sm group-hover:scale-110 transition-transform duration-300 overflow-hidden ring-1 ring-black/5">
             <img src="/assets/logo-hydra.png" alt="Hydra Skin" className="object-contain w-full h-full" />
           </div>
@@ -26,21 +31,14 @@ export const NavBar = ({ navSolid, scrollToId, onMenuToggle }) => {
             >
               HYDRA SKIN
             </span>
-            <span className="text-sm tracking-wide uppercase mt-1 font-bold text-hydra-pinkStrong">
-              Aesthetics
-            </span>
+            <span className="text-sm tracking-wide uppercase mt-1 font-bold text-hydra-dark/70">Clinical Aesthetics</span>
           </div>
         </button>
 
         <div className="hidden md:flex flex-1 items-center justify-center">
           {navSolid ? (
             <div className="flex items-center gap-6 px-6 py-3 rounded-full bg-white/95 shadow-[0_14px_40px_rgba(0,0,0,0.12)] ring-1 ring-black/5 backdrop-blur-md">
-              {[
-                ["Inicio", "inicio"],
-                ["Servicios", "servicios"],
-                ["Nosotros", "nosotros"],
-                ["Galería", "galeria"],
-              ].map(([label, id]) => (
+              {navLinks.map(([label, id]) => (
                 <button
                   key={id}
                   onClick={() => scrollToId(id)}
@@ -52,17 +50,8 @@ export const NavBar = ({ navSolid, scrollToId, onMenuToggle }) => {
             </div>
           ) : (
             <div className="flex items-center gap-10 text-xs font-semibold uppercase tracking-[0.15em] text-white">
-              {[
-                ["Inicio", "inicio"],
-                ["Servicios", "servicios"],
-                ["Nosotros", "nosotros"],
-                ["Galería", "galeria"],
-              ].map(([label, id]) => (
-                <button
-                  key={id}
-                  onClick={() => scrollToId(id)}
-                  className="hover:text-hydra-pink transition-colors"
-                >
+              {navLinks.map(([label, id]) => (
+                <button key={id} onClick={() => scrollToId(id)} className="hover:text-hydra-pink transition-colors">
                   {label}
                 </button>
               ))}
@@ -79,12 +68,12 @@ export const NavBar = ({ navSolid, scrollToId, onMenuToggle }) => {
                 : "bg-hydra-pink text-hydra-dark hover:brightness-105"
             }`}
           >
-            Agendar
+            Agendar evaluacion
           </button>
         </div>
 
         <button
-          aria-label="Abrir menú"
+          aria-label="Abrir menu"
           onClick={onMenuToggle}
           className={`md:hidden text-2xl focus:outline-none ${navSolid ? "text-hydra-dark" : "text-white"}`}
         >

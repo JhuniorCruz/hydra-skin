@@ -14,14 +14,17 @@ export const Footer = ({ scrollToId }) => (
         <button onClick={() => scrollToId("inicio")} className="hover:text-white transition-colors">
           Inicio
         </button>
+        <button onClick={() => scrollToId("expertise")} className="hover:text-white transition-colors">
+          Metodo
+        </button>
         <button onClick={() => scrollToId("servicios")} className="hover:text-white transition-colors">
           Servicios
         </button>
-        <button onClick={() => scrollToId("nosotros")} className="hover:text-white transition-colors">
-          Nosotros
+        <button onClick={() => scrollToId("faq")} className="hover:text-white transition-colors">
+          FAQ
         </button>
         <button onClick={() => scrollToId("contacto")} className="hover:text-white transition-colors">
-          Contacto
+          Agenda
         </button>
       </div>
 
