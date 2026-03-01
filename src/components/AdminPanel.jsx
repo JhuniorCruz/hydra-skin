@@ -33,8 +33,8 @@ export const AdminPanel = ({ services = [], gallery = [] }) => {
         return text.toString().toLowerCase()
             .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // remove accents
             .replace(/\s+/g, '-')
-            .replace(/[^\w\-]+/g, '')
-            .replace(/\-\-+/g, '-')
+            .replace(/[^\w-]+/g, '')
+            .replace(/--+/g, '-')
             .replace(/^-+/, '')
             .replace(/-+$/, '');
     };
