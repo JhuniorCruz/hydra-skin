@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#F0EFED" />
-    <meta
-      name="description"
-      content="Hydra Skin en Nuevo Chimbote: protocolos faciales y corporales con enfoque clinico, evaluacion personalizada y seguimiento post sesion."
-    />
-    <meta
-      name="keywords"
-      content="hidrafacial, limpieza facial, dermaplaning, radiofrecuencia, estetica clinica, bienestar, nuevo chimbote"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Hydra Skin | Ritual de renovacion para tu piel" />
-    <meta
-      property="og:description"
-      content="Agenda tu evaluacion personalizada en Hydra Skin y descubre protocolos premium para una piel luminosa y saludable."
-    />
-    <meta property="og:locale" content="es_PE" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Hydra Skin | Estetica clinica y bienestar" />
-    <meta
-      name="twitter:description"
-      content="Tratamientos faciales y corporales con enfoque profesional, resultados visibles y seguimiento real."
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>Hydra Skin | Estetica clinica en Nuevo Chimbote</title>
-  </head>
-  <body>
-    <noscript>Necesitas habilitar JavaScript para ver este sitio.</noscript>
-    <div id="root"></div>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#F0EFED" />
+  <meta name="description"
+    content="Hydra Skin en Nuevo Chimbote: protocolos faciales y corporales con enfoque clinico, evaluacion personalizada y seguimiento post sesion." />
+  <meta name="keywords"
+    content="hidrafacial, limpieza facial, dermaplaning, radiofrecuencia, estetica clinica, bienestar, nuevo chimbote" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hydra Skin | Ritual de renovacion para tu piel" />
+  <meta property="og:description"
+    content="Agenda tu evaluacion personalizada en Hydra Skin y descubre protocolos premium para una piel luminosa y saludable." />
+  <meta property="og:locale" content="es_PE" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hydra Skin | Estetica clinica y bienestar" />
+  <meta name="twitter:description"
+    content="Tratamientos faciales y corporales con enfoque profesional, resultados visibles y seguimiento real." />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Hydra Skin | Estetica clinica en Nuevo Chimbote</title>
+</head>
+
+<body>
+  <noscript>Necesitas habilitar JavaScript para ver este sitio.</noscript>
+  <div id="root"></div>
+
+  <!-- Required for Netlify Identity email invitations to work when they land on the root page -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+
 </html>
