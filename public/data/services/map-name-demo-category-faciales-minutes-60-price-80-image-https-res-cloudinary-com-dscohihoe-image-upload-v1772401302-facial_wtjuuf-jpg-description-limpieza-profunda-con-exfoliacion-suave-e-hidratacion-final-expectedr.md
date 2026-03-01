@@ -1,5 +1,5 @@
 ---
-name: demo
+name: Limpieza facial
 category: Faciales
 minutes: 60
 price: 80
