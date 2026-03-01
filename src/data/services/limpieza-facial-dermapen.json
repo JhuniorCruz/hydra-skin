@@ -1,0 +1,10 @@
+{
+  "name": "Limpieza Facial + Dermapen",
+  "category": "Faciales",
+  "minutes": 60,
+  "price": 180,
+  "image": "https://res.cloudinary.com/dscohihoe/image/upload/v1772408890/dermapen_z400lv.jpg",
+  "expectedResult": "Piel limpia y mas joven",
+  "description": "Aumento de regeneración celular",
+  "detailedDescription": ""
+}
