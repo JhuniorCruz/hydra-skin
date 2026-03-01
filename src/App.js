@@ -41,28 +41,19 @@ function App() {
   const [galleryData, setGalleryData] = useState([]);
 
   useEffect(() => {
-    // Fetch individual JSON files directly from public directory.
-    // In a real scenario, an index.json might be preferred if the collection size is large.
-    const serviceFiles = [
-      "idermaplaning.json",
-      "fototerapia-led.json",
-      "limpieza-facial.json",
-      "masaje-corporal.json",
-      "microneedling.json",
-      "radio-frecuencia.json"
-    ];
+    try {
+      // Load all JSON files dynamically from the src/data/services directory
+      const servicesContext = require.context('./data/services', false, /\.json$/);
+      const loadedServices = servicesContext.keys().map(key => servicesContext(key));
+      setServicesData(loadedServices);
 
-    Promise.all(serviceFiles.map(file => fetch(`/data/services/${file}`).then(r => r.json()).catch(() => null)))
-      .then(results => setServicesData(results.filter(Boolean)));
-
-    const galleryFiles = [
-      "correccin-manchas.json",
-      "glow-facial.json",
-      "masaje-relajante.json"
-    ];
-
-    Promise.all(galleryFiles.map(file => fetch(`/data/gallery/${file}`).then(r => r.json()).catch(() => null)))
-      .then(results => setGalleryData(results.filter(Boolean)));
+      // Load all JSON files dynamically from the src/data/gallery directory
+      const galleryContext = require.context('./data/gallery', false, /\.json$/);
+      const loadedGallery = galleryContext.keys().map(key => galleryContext(key));
+      setGalleryData(loadedGallery);
+    } catch (error) {
+      console.error("Error loading CMS data dynamically:", error);
+    }
   }, []);
 
   useEffect(() => {

@@ -15,7 +15,7 @@ media_library:
 collections:
   - name: "services"
     label: "Servicios"
-    folder: "public/data/services"
+    folder: "src/data/services"
     create: true
     slug: "{{slug}}"
     fields:
@@ -30,7 +30,7 @@ collections:
 
   - name: "gallery"
     label: "Casos de Éxito (Galería)"
-    folder: "public/data/gallery"
+    folder: "src/data/gallery"
     create: true
     slug: "{{slug}}"
     fields:
