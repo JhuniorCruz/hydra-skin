@@ -6,8 +6,8 @@ backend:
 media_library:
   name: cloudinary
   config:
-    cloud_name: YOUR_CLOUDINARY_CLOUD_NAME
-    api_key: YOUR_CLOUDINARY_API_KEY
+    cloud_name: dscohihoe
+    api_key: m49veuCS0woj50q4kLx3qxJVDFE
     default_transformations:
       - fetch_format: auto
       - quality: auto
