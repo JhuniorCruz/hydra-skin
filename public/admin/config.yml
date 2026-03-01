@@ -7,7 +7,7 @@ media_library:
   name: cloudinary
   config:
     cloud_name: dscohihoe
-    api_key: m49veuCS0woj50q4kLx3qxJVDFE
+    api_key: 829352495197846
     default_transformations:
       - fetch_format: auto
       - quality: auto
