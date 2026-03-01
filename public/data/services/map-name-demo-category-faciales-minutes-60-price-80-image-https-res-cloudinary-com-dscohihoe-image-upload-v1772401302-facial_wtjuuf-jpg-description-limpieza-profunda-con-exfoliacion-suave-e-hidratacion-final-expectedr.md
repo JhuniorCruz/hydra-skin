@@ -1,0 +1,9 @@
+---
+name: demo
+category: Faciales
+minutes: 60
+price: 80
+image: https://res.cloudinary.com/dscohihoe/image/upload/v1772401302/facial_wtjuuf.jpg
+expectedResult: Piel limpia, luminosa y con textura mas uniforme.
+description: Limpieza profunda con exfoliacion suave e hidratacion final.
+---
