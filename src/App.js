@@ -16,6 +16,7 @@ import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 import { FloatingWhatsAppButton } from "./components/FloatingWhatsAppButton";
 import { SEO } from "./components/SEO";
+import { AdminPanel } from "./components/AdminPanel";
 
 import { stats as statsData } from "./data/stats";
 
@@ -133,6 +134,10 @@ function App() {
       setFormData({ name: "", phone: "", email: "", service: "", date: "" });
     }, 2000);
   };
+
+  if (window.location.pathname === "/admin") {
+    return <AdminPanel services={servicesData} gallery={galleryData} />;
+  }
 
   return (
     <div className="bg-hydra-bg text-hydra-dark font-sans antialiased selection:bg-hydra-pink selection:text-white">
