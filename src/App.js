@@ -15,10 +15,9 @@ import { FAQSection } from "./components/FAQSection";
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 import { FloatingWhatsAppButton } from "./components/FloatingWhatsAppButton";
+import { SEO } from "./components/SEO";
 
 import { stats as statsData } from "./data/stats";
-import { services } from "./data/services";
-import { galleryBeforeAfter } from "./data/gallery";
 
 const WHATSAPP_NUMBER = "51914063936";
 
@@ -37,6 +36,34 @@ function App() {
     service: "",
     date: "",
   });
+
+  const [servicesData, setServicesData] = useState([]);
+  const [galleryData, setGalleryData] = useState([]);
+
+  useEffect(() => {
+    // Fetch individual JSON files directly from public directory.
+    // In a real scenario, an index.json might be preferred if the collection size is large.
+    const serviceFiles = [
+      "idermaplaning.json",
+      "fototerapia-led.json",
+      "limpieza-facial.json",
+      "masaje-corporal.json",
+      "microneedling.json",
+      "radio-frecuencia.json"
+    ];
+
+    Promise.all(serviceFiles.map(file => fetch(`/data/services/${file}`).then(r => r.json()).catch(() => null)))
+      .then(results => setServicesData(results.filter(Boolean)));
+
+    const galleryFiles = [
+      "correccin-manchas.json",
+      "glow-facial.json",
+      "masaje-relajante.json"
+    ];
+
+    Promise.all(galleryFiles.map(file => fetch(`/data/gallery/${file}`).then(r => r.json()).catch(() => null)))
+      .then(results => setGalleryData(results.filter(Boolean)));
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setNavSolid(window.scrollY > 50);
@@ -118,6 +145,7 @@ function App() {
 
   return (
     <div className="bg-hydra-bg text-hydra-dark font-sans antialiased selection:bg-hydra-pink selection:text-white">
+      <SEO title="Inicio" description="Hydra Skin en Nuevo Chimbote: protocolos faciales y corporales con enfoque clinico, evaluacion personalizada y seguimiento post sesion." />
       <NavBar navSolid={navSolid} scrollToId={scrollToId} onMenuToggle={() => setMenuOpen((v) => !v)} />
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} scrollToId={scrollToId} />
 
@@ -125,15 +153,15 @@ function App() {
       <StatsSection counts={counts} statsRef={statsRef} stats={statsData} />
       <AboutSection />
       <ExpertiseSection />
-      <ServicesSection services={services} onReserveService={handleServiceReserve} />
-      <GallerySection items={galleryBeforeAfter} />
+      <ServicesSection services={servicesData} onReserveService={handleServiceReserve} />
+      <GallerySection items={galleryData} />
       <FAQSection />
       <ContactSection
         formData={formData}
         handleFieldChange={handleFieldChange}
         handleSubmit={handleSubmit}
         btnLabel={btnLabel}
-        services={services}
+        services={servicesData}
       />
       <FloatingWhatsAppButton phoneNumber={WHATSAPP_NUMBER} />
       <Footer scrollToId={scrollToId} />
