@@ -49,8 +49,8 @@ export const ContactSection = ({ formData, handleFieldChange, handleSubmit, btnL
           </div>
         </div>
 
-        <div className="lg:w-2/3 bg-hydra-bg p-8 md:p-12 rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.12)] relative text-hydra-dark">
-          <div className="absolute top-0 left-0 w-full h-2 bg-hydra-pink rounded-t-2xl" />
+        <div className="lg:w-2/3 bg-hydra-bg p-8 md:p-12 rounded-lg shadow-[0_16px_40px_rgba(0,0,0,0.12)] relative text-hydra-dark">
+          <div className="absolute top-0 left-0 w-full h-2 bg-hydra-pink rounded-t-lg" />
           <form id="bookingForm" className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
@@ -123,7 +123,7 @@ export const ContactSection = ({ formData, handleFieldChange, handleSubmit, btnL
 
             <button
               type="submit"
-              className="w-full bg-hydra-pink text-hydra-dark font-bold py-5 rounded-xl shadow-[0_10px_24px_rgba(0,0,0,0.18)] uppercase tracking-wide text-sm mt-4 transition-all hover:brightness-110"
+              className="w-full bg-hydra-pink text-hydra-dark font-bold py-5 rounded-md shadow-[0_10px_24px_rgba(0,0,0,0.18)] uppercase tracking-wide text-sm mt-4 transition-all hover:brightness-110"
             >
               {btnLabel}
             </button>

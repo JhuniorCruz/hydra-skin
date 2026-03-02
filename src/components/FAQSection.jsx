@@ -73,7 +73,7 @@ export const FAQSection = () => {
               const isOpen = openIndex === index;
 
               return (
-                <article key={faq.question} className="rounded-xl border border-hydra-dark/10 bg-hydra-bg/70 overflow-hidden">
+                <article key={faq.question} className="rounded-lg border border-hydra-dark/10 bg-hydra-bg/70 overflow-hidden">
                   <button
                     type="button"
                     onClick={() => setOpenIndex((current) => (current === index ? -1 : index))}
@@ -82,9 +82,8 @@ export const FAQSection = () => {
                   >
                     <span className="font-semibold text-hydra-dark">{faq.question}</span>
                     <span
-                      className={`w-8 h-8 rounded-full grid place-items-center text-sm font-semibold transition-colors ${
-                        isOpen ? "bg-hydra-pink text-hydra-dark" : "bg-hydra-dark/10 text-hydra-dark/70"
-                      }`}
+                      className={`w-8 h-8 rounded-md grid place-items-center text-sm font-semibold transition-colors ${isOpen ? "bg-hydra-pink text-hydra-dark" : "bg-hydra-dark/10 text-hydra-dark/70"
+                        }`}
                     >
                       {isOpen ? "-" : "+"}
                     </span>
@@ -105,9 +104,8 @@ export const FAQSection = () => {
 
 const AnimateHeight = ({ isOpen, children }) => (
   <div
-    className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-      isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-    }`}
+    className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+      }`}
   >
     <div className="overflow-hidden">{children}</div>
   </div>

@@ -60,13 +60,13 @@ export const ServicesSection = ({ services, onReserveService }) => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            className="relative w-full max-w-5xl rounded-3xl overflow-hidden bg-hydra-bg shadow-[0_28px_70px_rgba(0,0,0,0.35)]"
+            className="relative w-full max-w-5xl rounded-xl overflow-hidden bg-hydra-bg shadow-[0_28px_70px_rgba(0,0,0,0.35)]"
           >
             <button
               type="button"
               onClick={() => setSelectedService(null)}
               aria-label="Cerrar modal"
-              className="absolute top-4 right-4 z-20 h-10 w-10 rounded-full border border-hydra-dark/15 bg-hydra-bg/90 text-hydra-dark/70 hover:text-hydra-dark hover:border-hydra-dark/30 transition-colors"
+              className="absolute top-4 right-4 z-20 h-10 w-10 rounded-md border border-hydra-dark/15 bg-hydra-bg/90 text-hydra-dark/70 hover:text-hydra-dark hover:border-hydra-dark/30 transition-colors"
             >
               X
             </button>
@@ -94,10 +94,10 @@ export const ServicesSection = ({ services, onReserveService }) => {
                 </h3>
 
                 <div className="flex gap-3 mb-6 flex-wrap">
-                  <span className="px-3 py-1 text-xs uppercase tracking-wide rounded-full bg-hydra-dark/5 text-hydra-dark/70">
+                  <span className="px-3 py-1 text-xs uppercase tracking-wide rounded-md bg-hydra-dark/5 text-hydra-dark/70">
                     {selectedService.minutes} minutos
                   </span>
-                  <span className="px-3 py-1 text-xs uppercase tracking-wide rounded-full bg-hydra-pink/30 text-hydra-dark">
+                  <span className="px-3 py-1 text-xs uppercase tracking-wide rounded-md bg-hydra-pink/30 text-hydra-dark">
                     ${selectedService.price}
                   </span>
                 </div>
@@ -114,7 +114,7 @@ export const ServicesSection = ({ services, onReserveService }) => {
                       onReserveService?.(selectedService.name);
                       setSelectedService(null);
                     }}
-                    className="w-full py-3.5 px-6 bg-hydra-pink text-hydra-dark uppercase tracking-wider text-sm font-semibold rounded-xl hover:brightness-105 transition-all"
+                    className="w-full py-3.5 px-6 bg-hydra-pink text-hydra-dark uppercase tracking-wider text-sm font-semibold rounded-md hover:brightness-105 transition-all"
                   >
                     Agendar evaluacion
                   </button>
@@ -154,11 +154,10 @@ export const ServicesSection = ({ services, onReserveService }) => {
                 key={category}
                 type="button"
                 onClick={() => setActiveCategory(category)}
-                className={`px-5 py-2 rounded-full text-xs uppercase tracking-[0.16em] font-semibold border transition-colors ${
-                  isActive
+                className={`px-5 py-2 rounded-md text-xs uppercase tracking-[0.16em] font-semibold border transition-colors ${isActive
                     ? "bg-hydra-pink border-hydra-pink text-hydra-dark"
                     : "bg-white/70 border-hydra-dark/10 text-hydra-dark/70 hover:border-hydra-dark/25"
-                }`}
+                  }`}
               >
                 {category}
               </button>
@@ -167,7 +166,7 @@ export const ServicesSection = ({ services, onReserveService }) => {
         </div>
 
         {filteredServices.length === 0 ? (
-          <div className="rounded-2xl bg-white/80 border border-hydra-dark/10 p-8 text-center text-hydra-dark/70">
+          <div className="rounded-lg bg-white/80 border border-hydra-dark/10 p-8 text-center text-hydra-dark/70">
             No hay servicios en esta categoria por ahora.
           </div>
         ) : (
@@ -177,7 +176,7 @@ export const ServicesSection = ({ services, onReserveService }) => {
                 key={svc.name}
                 type="button"
                 onClick={() => setSelectedService(svc)}
-                className="relative text-left p-8 rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.12)] cursor-pointer group transition-colors transition-shadow duration-300 bg-hydra-bg hover:bg-hydra-dark hover:shadow-[0_20px_45px_rgba(0,0,0,0.18)] focus:outline-none focus-visible:ring-2 focus-visible:ring-hydra-pink focus-visible:ring-offset-2 focus-visible:ring-offset-hydra-beige"
+                className="relative text-left p-8 rounded-lg shadow-[0_16px_40px_rgba(0,0,0,0.12)] cursor-pointer group transition-colors transition-shadow duration-300 bg-hydra-bg hover:bg-hydra-dark hover:shadow-[0_20px_45px_rgba(0,0,0,0.18)] focus:outline-none focus-visible:ring-2 focus-visible:ring-hydra-pink focus-visible:ring-offset-2 focus-visible:ring-offset-hydra-beige"
               >
                 <div className="flex justify-between items-start mb-6 border-b pb-4 transition-colors border-gray-200 group-hover:border-white/20">
                   <div>
@@ -189,7 +188,7 @@ export const ServicesSection = ({ services, onReserveService }) => {
                   <span className="font-bold text-lg text-hydra-pink">${svc.price}</span>
                 </div>
 
-                <div className="mb-6 overflow-hidden rounded-xl border border-gray-200 bg-white group-hover:border-white/20 group-hover:bg-white/10">
+                <div className="mb-6 overflow-hidden rounded-md border border-gray-200 bg-white group-hover:border-white/20 group-hover:bg-white/10">
                   {svc.image ? (
                     <img
                       src={svc.image}

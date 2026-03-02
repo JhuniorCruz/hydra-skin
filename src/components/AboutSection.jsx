@@ -5,9 +5,9 @@ export const AboutSection = () => (
     <div className="container mx-auto px-6">
       <div className="flex flex-col md:flex-row gap-20 items-center">
         <div className="w-full md:w-1/2 relative">
-          <div className="relative z-10 overflow-hidden rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.12)]">
+          <div className="relative z-10 overflow-hidden rounded-lg shadow-[0_16px_40px_rgba(0,0,0,0.12)]">
             <img
-              src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2070&auto=format&fit=crop"
+              src="https://res.cloudinary.com/dscohihoe/image/upload/v1772413931/about_qwmkri.png"
               alt="Profesional realizando protocolo facial"
               className="w-full h-auto object-cover grayscale-[8%] hover:grayscale-0 transition-all duration-700"
             />

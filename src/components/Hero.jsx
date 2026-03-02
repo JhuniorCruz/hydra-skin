@@ -4,7 +4,7 @@ export const Hero = ({ scrollToId }) => (
   <header id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden">
     <div className="absolute inset-0 z-0">
       <img
-        src="https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=2073&auto=format&fit=crop"
+        src="https://res.cloudinary.com/dscohihoe/image/upload/v1772413238/hero_ia1l8u.png"
         alt="Cabina de cuidado facial premium"
         className="w-full h-full object-cover"
       />
@@ -33,13 +33,13 @@ export const Hero = ({ scrollToId }) => (
         <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
           <button
             onClick={() => scrollToId("contacto")}
-            className="px-8 py-4 bg-hydra-pink text-hydra-dark uppercase tracking-widest text-xs font-bold transition-all shadow-lg hover:translate-y-[-1px]"
+            className="px-8 py-4 bg-hydra-pink text-hydra-dark uppercase tracking-widest text-xs font-bold transition-all shadow-lg hover:translate-y-[-1px] rounded-md"
           >
             Agendar evaluacion
           </button>
           <button
             onClick={() => scrollToId("servicios")}
-            className="border border-white/45 px-8 py-4 uppercase tracking-widest text-xs font-bold transition-colors backdrop-blur-sm text-white hover:bg-white hover:text-hydra-dark"
+            className="border border-white/45 px-8 py-4 uppercase tracking-widest text-xs font-bold transition-colors backdrop-blur-sm text-white hover:bg-white hover:text-hydra-dark rounded-md"
           >
             Descubrir tratamientos
           </button>

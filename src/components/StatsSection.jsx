@@ -9,7 +9,7 @@ export const StatsSection = ({ counts, statsRef, stats }) => (
           {stats.map((stat, idx) => (
             <div
               key={stat.label}
-              className="flex flex-col items-center p-4 bg-white rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.12)] border-b-2 border-hydra-dark/10"
+              className="flex flex-col items-center p-4 bg-white rounded-lg shadow-[0_16px_40px_rgba(0,0,0,0.12)] border-b-2 border-hydra-dark/10"
             >
               <span className="text-3xl font-serif text-hydra-dark">
                 {counts[idx]}
